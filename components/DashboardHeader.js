@@ -26,7 +26,7 @@ export default function DashboardHeader() {
     <div className='bg-white w-full h-14 flex items-center divide-x-1 gap-x-4  px-3'>
          {/* Project name and service Connection */}
         <div className='flex flex-1 items-center justify-between h-full'>
-            <p className='text-xl font-medium text-[#8a1a9b]'>slkgroup-api-migration</p>
+            <p className='text-xl font-medium text-[#8a1a9b]'>Accounts-api-migration</p>
             <div className='flex items-center gap-2'>
                 {/* dropdown and dots */}
                 <Dropdown
