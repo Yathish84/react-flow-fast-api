@@ -1,7 +1,8 @@
+import UIProvider from '@/providers/UIProvider'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Figtree } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const figtree = Figtree({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={figtree.className}>
+        <UIProvider>
+          {children}
+        </UIProvider>
+      </body>
     </html>
   )
 }
