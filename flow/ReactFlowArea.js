@@ -2,18 +2,26 @@
 import React, { useCallback, useRef, useState } from 'react'
 import ReactFlow, { Controls, Background, useNodesState } from 'reactflow';
 import 'reactflow/dist/style.css';
-import SQLConnector from './nodes/connectors/SQLConnector';
-import PGSQLConnector from './nodes/connectors/PGSQLConnector';
+import SQLConnector from './nodes/SQLConnector';
+import PGSQLConnector from './nodes/PGSQLConnector';
+import JSX from './nodes/JSX';
 
 const nodeTypes = { 
     SQL: SQLConnector,
+    // PGSQLConnector: PGSQLConnector,
+    // javascript: PGSQLConnector,
+    jsx: JSX,
     PostgressSQL: PGSQLConnector
     };
 
+ 
 export default function ReactFlowArea() {
     const reactFlowWrapper = useRef(null);
     const [nodes, setNodes, onNodesChange] = useNodesState([]);
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
+
+   
+  
     const onDragOver = useCallback((event) => {
         event.preventDefault();
         event.dataTransfer.dropEffect = 'move';
@@ -46,7 +54,7 @@ export default function ReactFlowArea() {
         [reactFlowInstance]
       );
   return (
-    <div className='h-full ' ref={reactFlowWrapper}>
+    <div className='h-full w-screen' ref={reactFlowWrapper}>
         <ReactFlow
             nodes={nodes}
             nodeTypes={nodeTypes}
@@ -56,9 +64,13 @@ export default function ReactFlowArea() {
             onDragOver={onDragOver}
             // fitView
         >
-            <Background size={2} gap={30}/>
+            <Background variant='lines' size={2} gap={30}/>
             <Controls position='top-right'/>
         </ReactFlow>
     </div>
   )
 }
+
+
+
+

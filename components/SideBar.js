@@ -23,13 +23,21 @@ export default function SideBar() {
         {
             id:1,
             icon:BiLogoPostgresql,
-            label: 'PostgressSQL',
-            tooltip: 'PostgreSQL'
+            label: 'Upload',
+            tooltip: 'file or folder upload'
             
-        }
+        },
+        {
+            id:2,
+            icon:BiLogoPostgresql,
+            label: 'Upload',
+            tooltip: 'file or folder upload'
+            
+        },
+
     ]
   return (
-    <div className='bg-white w-72 h-screen flex flex-col py-5'>
+    <div className='bg-white dark:bg-neutral-600 w-72 h-screen flex flex-col py-5'>
         {/* Logo  */}
       
         <div className="w-full flex justify-center py-10 
@@ -38,85 +46,9 @@ export default function SideBar() {
             <Image src='/next.svg' className='z-20' width={230} height={20}/>
         </div>
        
-        {/* Accordians */}
+        {/* Connectors */}
         <div className=' h-full flex-1 overflow-y-auto   '>
-        <Accordion 
-                // variant='shadow'
-                selectionMode="multiple" 
-                itemClasses={itemClasses}
-                className='h-full overflow-y-scroll'
-                // selectedKeys={['1', '2', '3', '4','5']}
-            >
-                {/* Database */}
-                <AccordionItem
-                key="1"
-                aria-label="Connectors"
-                startContent={
-                <BsDatabaseAdd  className='text-black' size={26}/>
-                }
-                title="Connectors"
-                className='text-neutral-400 '
-                >
-                    {connectors?.map((connector)=>(
-                        <ConnectorBtn key={connector.id} {...connector} />
-                    ))}
-                </AccordionItem>
-
-
-                {/* Methods */}
-
-
-                <AccordionItem
-                key="2"
-                aria-label="Methods"
-                startContent={
-                <BsArrowDownUp  className='text-black' size={26}/>
-                }
-                title="Methods"
-                className='text-neutral-400'
-                >
-                    <p>Welcome</p>
-                </AccordionItem>
-
-                {/* Clouds */}
-
-                <AccordionItem
-                key="3"
-                aria-label="Clouds"
-                startContent={
-                <BsCloudy  className='text-black' size={26}/>
-                }
-                title="Clouds"
-                className='text-neutral-400'
-                >
-                    <p>Welcome</p>
-                </AccordionItem>
-                {/* Integartions */}
-                <AccordionItem
-                key="4"
-                aria-label="Integartions"
-                startContent={
-                <FaRegHandshake className='text-black' size={26}/>
-                }
-                title="Integartions"
-                className='text-neutral-400'
-                >
-                    <p>Welcome</p>
-                </AccordionItem>
-                {/* Identity Server */}
-                <AccordionItem
-                key="5"
-                aria-label="Identity Server"
-                startContent={
-                <CiServer className='text-black' size={26}/>
-                }
-                title="Identity Server"
-                className='text-neutral-400'
-                >
-                    <p>Welcome</p>
-                </AccordionItem>
-                
-            </Accordion>
+     
         </div>
         {/* Accounts footer */}
         <div className='flex flex-col px-5 gap-3'>

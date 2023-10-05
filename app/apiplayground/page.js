@@ -5,12 +5,12 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div className='min-h-screen flex divide-x-1'>
-        <SideBar />
-        <main className='w-full h-screen flex flex-col gap-x-2 divide-y-1 '>
+    <div className=' min-h-screen w-full h-screen flex flex-col gap-x-2 divide-y-1 '>
+        {/* <SideBar /> */}
+        {/* <main className='w-full h-screen flex flex-col gap-x-2 divide-y-1 '> */}
             <DashboardHeader />
             <ReactFlowArea />
-        </main>
+        {/* </main> */}
     </div>
   )
 }
