@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import UploadModel from "@/components/models/UploadModel";
+import UploadModel from "@/models/UploadModel";
 
 
 export default function ModelProvider() {
