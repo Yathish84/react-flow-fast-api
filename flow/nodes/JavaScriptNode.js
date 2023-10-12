@@ -1,6 +1,5 @@
 import React from 'react'
 import { Handle , Position } from 'reactflow'
-import {AiOutlineClose} from 'react-icons/ai'
 import Box from '@/components/Box'
 import { RiJavascriptFill} from 'react-icons/ri'
 import {Chip ,Code , Accordion, AccordionItem , Badge} from "@nextui-org/react";
@@ -8,12 +7,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vs } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Button from '@/components/Button'
 import { PiWarningFill } from 'react-icons/pi'
+import useRefactorTrigger from '@/hooks/useRefactorTrigger'
 
 
 
 
 export default function JavaScriptNode({data , isConnectable}) {
-
+  const {onOpen}= useRefactorTrigger()
   const node = {
     "type": "javascript",
     "data": {
@@ -48,13 +48,13 @@ export default function JavaScriptNode({data , isConnectable}) {
         <div>
           <div className='flex space-x-2 items-center justify-between'>
             <div className='flex w-full space-x-2 items-center'>
-            <RiJavascriptFill className='text-yellow-500 rounded'  size={30}/>
+            <RiJavascriptFill className='text-yellow-500 rounded '  size={30}/>
             <p className='text-neutral-500'>{data?.functionName}</p>
 
             </div>
-            <div>
+            <div className=' cursor-pointer ' onClick={()=>onOpen(data)}>
                 <Badge content={data?.optimizations.length}>
-                    <PiWarningFill size={25} className='text-yellow-500 rounded'/>
+                    <PiWarningFill size={25} className='text-yellow-500 rounded  w-7'/>
                 </Badge>
             </div>
           </div>

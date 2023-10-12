@@ -9,6 +9,7 @@ import getOpenAiRes from '@/Actions/getOpenAiRes'
 import { uploadFiles } from '@/ActionCallers/ServerActions'
 import { nanoid } from 'nanoid'
 
+
 export default function  UploadModel() {
     const [isPending , startTransition] = useTransition()
     const initialFormat = {
@@ -16,7 +17,8 @@ export default function  UploadModel() {
         'data':''
     }
     const uploadTrigger = useUploadTrigger()
-    const nodesStore = useNodeStore()
+    const nodesStore = useNodeStore();
+  
     const [fileData , setFileData] = useState(initialFormat)
     const handleOnClose = () => {
         uploadTrigger.onClose()

@@ -8,8 +8,12 @@ export default function Dialog({isOpen ,onClose , title, desc , children}) {
             backdrop="opaque" 
             isOpen={isOpen} 
             onClose={onClose}
+            scrollBehavior='inside'
+            size='lg'
             // onOpenChange={onOpenChange}
             classNames={{
+              // base:'w-4/5',
+             
             // backdrop: "bg-gradient-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20"
             }}
       >
